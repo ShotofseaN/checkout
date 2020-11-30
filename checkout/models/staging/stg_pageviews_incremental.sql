@@ -53,7 +53,4 @@ SELECT * FROM final
 
 {% endif %}
 
-GROUP BY 1,2
-
-
 
