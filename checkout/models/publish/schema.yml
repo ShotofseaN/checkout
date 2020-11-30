@@ -1,0 +1,30 @@
+#Describing the models in this schema
+
+version: 2
+
+models:
+
+    - name: pageviews_by_current_postcode
+      description: "A materialized incremental table of pageviews"
+      columns:
+          - name: postcode
+            description: "The postcode of users viewing pages"
+            tests:
+                - not_null
+          - name: pageview_hour
+            description: 'The truncated hour of the time of the pageview'
+          - name: count_pageviews
+            description: 'An aggregation of number of views within the hour for that postcode'
+
+
+    - name: pageviews_by_hist_postcode
+      description: "A materialized incremental table of pageviews"
+      columns:
+          - name: hist_postcode
+            description: 'The postcode of the user on the day of the view'
+            tests:
+                - not_null
+          - name: pageview_hour
+            description: 'The truncated hour of the time of the pageview'
+          - name: count_pageviews
+            description: 'An aggregation of number of views within the hour for that postcode'

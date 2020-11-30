@@ -1,0 +1,21 @@
+#Describing the models in this schema
+version: 2
+
+models:
+    - name: user_snapshot
+      description: "Initial staging table of pageviews"
+      columns:
+        - name: id
+          description: "The identifier of a user"
+          tests:
+            - not_null
+        - name: postcode
+          description: "The postcode of the user"
+        - name: dbt_scd_id
+          description: "The unique change id"
+        - name: dbt_updated_at
+          description: "The date the row was updated"
+        - name: dbt_valid_from
+          description: "The date the row is valid from"
+        - name: dbt_valid_to
+          description: "The date the row is valid until, NULL if it the latest row"
